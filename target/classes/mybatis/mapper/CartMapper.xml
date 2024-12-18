@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="nuc.edu.cn.wdf.dao.CartDao">
+
+    <!-- 查询所有购物车项（按用户ID） -->
+    <select id="getCartByUserId" resultType="nuc.edu.cn.wdf.pojo.Cart">
+        SELECT
+            carts.id ,
+            carts.quantity,
+            fruits.name ,
+            fruits.price ,
+            fruits.description,
+            fruits.image
+        FROM
+            carts
+                INNER JOIN
+            fruits ON carts.fruit_id = fruits.id
+        WHERE
+            carts.user_id = #{userId};
+    </select>
+
+    <!-- 通过购物车ID查询购物车项 -->
+    <select id="findCartById" resultType="nuc.edu.cn.wdf.pojo.Cart">
+        SELECT id, user_id, fruit_id, quantity
+        FROM carts
+        WHERE id = #{cartId}
+    </select>
+
+    <!-- 添加购物车项 -->
+    <insert id="addCart" parameterType="nuc.edu.cn.wdf.pojo.Cart" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO carts (user_id, fruit_id, quantity)
+        VALUES (#{userId}, #{fruitId}, #{quantity})
+    </insert>
+
+    <!-- 删除购物车项 -->
+    <delete id="removeCart" parameterType="int">
+        DELETE FROM carts WHERE id = #{cartId}
+    </delete>
+
+    <!-- 更新购物车数量 -->
+    <update id="updateQuantity" parameterType="nuc.edu.cn.wdf.pojo.Cart">
+        UPDATE carts
+        SET quantity = #{quantity}
+        WHERE id = #{cartId}
+    </update>
+
+    <!-- 查询所有水果 -->
+    <select id="findAllCarts" resultType="nuc.edu.cn.wdf.pojo.Cart">
+        SELECT id, name, num, price, description, image FROM carts
+    </select>
+
+    <select id="countCartItem" resultType="int">
+        SELECT COUNT(*)
+        FROM carts
+        WHERE user_id = #{userId} AND fruit_id = #{fruitId};
+    </select>
+</mapper>

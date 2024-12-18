@@ -1,0 +1,284 @@
+/* 导航栏的基础样式 */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* 按钮均匀分布 */
+    background-color: #7e5bef; /* 紫色背景 */
+    padding: 10px 20px;
+    border-radius: 12px; /* 圆角 */
+}
+
+.nav-item {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+/* 鼠标悬停时的背景色变化 */
+.nav-item:hover {
+    background-color: #5a3d9e;
+    transform: scale(1.1); /* 放大效果 */
+}
+/* 全局样式 */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+
+    background-size: cover; /* 背景图像覆盖 */
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+/* 居中容器 */
+.wallet-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+/* 钱包卡片样式 */
+.wallet-card {
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 更强的阴影效果 */
+    padding: 40px;
+    text-align: center;
+    width: 350px;
+    max-width: 100%;
+    backdrop-filter: blur(10px); /* 背景模糊效果 */
+    margin-top: -150px;
+}
+
+/* 钱包卡片标题 */
+.wallet-card h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* 钱包卡片余额文字 */
+.wallet-card p {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* 余额金额 */
+.wallet-card span {
+    font-weight: bold;
+    font-size: 22px;
+    color: #28a745;  /* 绿色显示余额 */
+}
+
+/* 按钮样式 */
+.wallet-card button {
+    background-color: rgba(0, 123, 255, 0.8); /* 半透明蓝色背景 */
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    margin: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.wallet-card button:hover {
+    background-color: rgba(0, 123, 255, 1); /* 悬停时完全不透明 */
+    transform: scale(1.05); /* 按钮放大效果 */
+}
+
+.wallet-card button:active {
+    transform: scale(0.95); /* 按钮点击时缩小效果 */
+}
+/* 对话框的基础样式 */
+.dialog {
+    display: none;
+    position: fixed;   /* 让对话框固定在屏幕上 */
+    top: 50%;           /* 垂直居中 */
+    left: 50%;          /* 水平居中 */
+    transform: translate(-50%, -50%); /* 使对话框完全居中 */
+    background-color: rgba(255, 255, 255, 0.9); /* 背景半透明 */
+    padding: 30px;
+    border-radius: 12px;  /* 更圆的边角 */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);  /* 更柔和的阴影 */
+    z-index: 1000;      /* 确保对话框在其他元素上层 */
+    max-width: 500px;    /* 最大宽度 */
+    width: 100%;         /* 宽度为 100% 但最多 500px */
+    box-sizing: border-box; /* 包含 padding 和 border 在内的宽度计算 */
+    overflow: hidden;    /* 防止内容溢出 */
+}
+
+/* 对话框标题的样式 */
+.dialog-header {
+    cursor: move;  /* 使标题具有拖动光标 */
+    padding: 12px;
+    background-color: #6B4EFB;  /* 深紫色背景 */
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0; /* 只给顶部圆角 */
+    text-align: center;
+}
+
+/* 对话框内容 */
+.dialog-content {
+    padding: 20px 10px;
+    font-size: 16px;
+}
+
+/* 对话框的基础样式 */
+.dialog {
+    display: none;
+    position: fixed;   /* 让对话框固定在屏幕上 */
+    top: 50%;           /* 垂直居中 */
+    left: 50%;          /* 水平居中 */
+    transform: translate(-50%, -50%); /* 使对话框完全居中 */
+    background-color: rgba(255, 255, 255, 0.95); /* 背景半透明 */
+    padding: 25px;
+    border-radius: 16px;  /* 圆角更大 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  /* 更柔和的阴影 */
+    z-index: 1000;      /* 确保对话框在其他元素上层 */
+    max-width: 500px;    /* 最大宽度 */
+    width: 100%;         /* 宽度为 100% 但最多 500px */
+    box-sizing: border-box; /* 包含 padding 和 border 在内的宽度计算 */
+    animation: fadeIn 0.3s ease-out; /* 淡入动画 */
+}
+
+/* 对话框标题的样式 */
+.dialog-header {
+    cursor: move;  /* 使标题具有拖动光标 */
+    padding: 14px;
+    background-color: #6c5ce7;  /* 现代的紫色 */
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 12px 12px 0 0; /* 顶部圆角 */
+    text-align: center;
+    margin-bottom: 15px; /* 添加标题与内容之间的间距 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* 小的阴影效果 */
+}
+
+/* 对话框的基础样式 */
+.dialog {
+    display: none;
+    position: fixed;   /* 让对话框固定在屏幕上 */
+    top: 50%;           /* 垂直居中 */
+    left: 50%;          /* 水平居中 */
+    transform: translate(-50%, -50%); /* 使对话框完全居中 */
+    background-color: rgba(255, 255, 255, 0.95); /* 背景半透明 */
+    padding: 50px;
+    border-radius: 16px;  /* 圆角更大 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  /* 更柔和的阴影 */
+    z-index: 1000;      /* 确保对话框在其他元素上层 */
+    max-width: 500px;    /* 最大宽度 */
+    width: 100%;         /* 宽度为 100% 但最多 500px */
+    box-sizing: border-box; /* 包含 padding 和 border 在内的宽度计算 */
+    animation: fadeIn 0.3s ease-out; /* 淡入动画 */
+}
+
+/* 对话框标题的样式 */
+.dialog-header {
+    cursor: move;  /* 使标题具有拖动光标 */
+    padding: 14px;
+    background-color: #6c5ce7;  /* 现代的紫色 */
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 12px 12px 0 0; /* 顶部圆角 */
+    text-align: center;
+    margin-bottom: 15px; /* 添加标题与内容之间的间距 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* 小的阴影效果 */
+}
+
+/* 对话框内容 */
+.dialog-content {
+    padding: 20px 10px;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    position: relative;  /* 或者 absolute */
+    left: 100px;  /* 控制左边距 */
+}
+
+/* 对话框按钮的样式 */
+.dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* 按钮基础样式 */
+.dialog-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+}
+
+/* 确认按钮样式 */
+.confirm-btn {
+    background-color: #6c5ce7; /* 深紫色 */
+    color: white;
+}
+
+.confirm-btn:hover {
+    background-color: #5e46c3; /* 深一点的紫色 */
+    transform: translateY(-2px); /* 提升效果 */
+}
+
+/* 取消按钮样式 */
+.cancel-btn {
+    background-color: #e74c3c; /* 红色 */
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: #c0392b; /* 深红色 */
+    transform: translateY(-2px); /* 提升效果 */
+}
+
+/* 输入框样式 */
+input[type="number"] {
+    padding: 12px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/* 输入框聚焦时的效果 */
+input[type="number"]:focus {
+    border-color: #6c5ce7; /* 聚焦时的边框色 */
+    outline: none;
+    box-shadow: 0 0 6px rgba(108, 92, 231, 0.5); /* 聚焦时的阴影 */
+}
+
+/* 动画效果：对话框淡入 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+

@@ -1,0 +1,157 @@
+/* 导航栏的基础样式 */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* 按钮均匀分布 */
+    background-color: #ff3939;
+    padding: 10px 20px;
+    border-radius: 12px; /* 圆角 */
+}
+
+.nav-item {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+/* 鼠标悬停时的背景色变化 */
+.nav-item:hover {
+    background-color: #fa027e;
+    transform: scale(1.1); /* 放大效果 */
+}
+#screen{
+    width: 9999px;
+    height: 9999px;
+    animation: 10s bt infinite;
+}
+
+
+/* 设置基础样式 */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f7f8fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* 容器样式 */
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+/* 标题样式 */
+h2 {
+    text-align: center;
+    color: #b205ec;
+    font-weight: 600;
+    font-size: 26px;
+    margin-bottom: 30px;
+}
+
+/* 输入框和标签 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: 500;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    max-width: 350px;  /* 限制输入框最大宽度 */
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+    margin: 0 auto;  /* 使输入框居中 */
+}
+
+/* 输入框聚焦时效果 */
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #4e73df;
+    background-color: #fff;
+    outline: none;
+}
+
+/* 按钮布局 */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+    margin-top: 60px;  /* 适当调整按钮之间的间距 */
+}
+
+/* 按钮样式 */
+button, a {
+    padding: 12px 20px;  /* 稍微增大按钮的padding */
+    font-size: 14px;      /* 保持字体大小 */
+    font-weight: 600;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    width: 48%;  /* 将按钮的宽度调整为45%，使其不再占满一行 */
+    box-sizing: border-box;  /* 确保宽度包括 padding 和 border */
+}
+
+/* 确认按钮样式 */
+button.btn-confirm {
+    background-color: #b205ec;  /* 使用实心颜色 */
+    color: white;
+    border: none;
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.2);
+}
+
+button.btn-confirm:hover {
+    background-color: #218838;  /* 悬停时颜色变化 */
+    box-shadow: 0 6px 12px rgba(40, 167, 69, 0.3);
+}
+
+/* 退出按钮样式 */
+a.btn-logout {
+    background-color: #b205ec; /* 使用实心颜色 */
+    color: white;
+    width: 48%;  /* 按钮宽度与确认按钮一致 */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.2);
+    display: inline-block;
+}
+
+a.btn-logout:hover {
+    background-color: #c82333; /* 悬停时颜色变化 */
+    box-shadow: 0 6px 12px rgba(220, 53, 69, 0.3);
+}
+
+/* 小屏幕下按钮自适应 */
+@media (max-width: 480px) {
+    .buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    button, a {
+        width: 100%; /* 小屏幕下按钮占满一整行 */
+        margin-bottom: 15px;
+    }
+}

@@ -1,0 +1,109 @@
+/* 外部 CSS 文件: menu.css */
+
+/* 导航栏的基础样式 */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* 按钮均匀分布 */
+    background-color: #92c35e;
+    padding: 10px 20px;
+    border-radius: 12px; /* 圆角 */
+}
+
+.nav-item {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+/* 鼠标悬停时的背景色变化 */
+.nav-item:hover {
+    background-color: #9fff39;
+    transform: scale(1.1); /* 放大效果 */
+}
+#screen{
+    width: 9999px;
+    height: 9999px;
+    animation: 10s bt infinite;
+}
+#screen img{
+    float: left;
+}
+#tv{
+    width: 1420px;
+    height: 450px;
+    overflow: hidden;
+}
+
+@keyframes bt {
+    0%{}
+    20%{transform: translateX(0px)}
+    40%{transform: translateX(-1420px)}
+    60%{transform: translateX(-2840px)}
+    80%{transform: translateX(-4260px)}
+    100%{transform: translateX(-5680px)}
+}
+/* 从 Uiverse.io by kamehame-ha */
+
+/* 卡片容器 */
+.cards {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    transform: translate(50px, 90px);
+}
+
+/* 单个卡片的样式 */
+.cards .red {
+    background-color: #f43f5e;
+}
+
+.cards .blue {
+    background-color: #3b82f6;
+}
+
+.cards .green {
+    background-color: #22c55e;
+}
+.cards .black {
+    background-color: black;
+}
+.cards .yellow {
+    background-color: gold;
+}
+
+.cards .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100px;
+    width: 250px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.cards .card p.tip {
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.cards .card p.second-text {
+    font-size: .7em;
+}
+
+.cards .card:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.cards:hover > .card:not(:hover) {
+    filter: blur(10px);
+    transform: scale(0.9, 0.9);
+}

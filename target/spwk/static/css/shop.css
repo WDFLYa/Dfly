@@ -1,0 +1,301 @@
+/* 导航栏 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ff0000;
+    padding: 10px 2px;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out; /* 动画效果 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5%;
+    z-index: 1000;
+}
+
+/* 隐藏导航栏的样式 */
+.navbar.hidden {
+    transform: translateY(-80%); /* 隐藏导航栏 */
+}
+
+
+/* 鼠标悬停时显示导航栏 */
+.navbar:hover {
+    transform: translateY(0); /* 鼠标悬停时恢复 */
+}
+
+.nav-item {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    background-color: #d4e115;
+    transform: scale(1.1);
+}
+/* From Uiverse.io by boryanakrasteva */
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+
+}
+
+.input {
+    border-style: none;
+    height: 29px;
+    width: 1px;
+    padding: 10px;
+    outline: none;
+    border-radius: 50%;
+    transition: .5s ease-in-out;
+    background-color: #ff0000;
+    box-shadow: 0px 0px 3px #f3f3f3;
+    padding-right: 40px;
+    color: #fff;
+}
+
+.input::placeholder,
+.input {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 17px;
+}
+
+.input::placeholder {
+    color: #8f8f8f;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    border-style: none;
+    border-radius: 50%;
+    pointer-events: painted;
+    background-color: transparent;
+    transition: .2s linear;
+}
+
+.icon:focus ~ .input,
+.input:focus {
+    box-shadow: none;
+    width: 250px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 3px solid #251e1e;
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+/* 商品容器样式 */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;  /* 允许商品换行 */
+    justify-content: flex-start;
+    margin: 0 10px;  /* 左右各100px的间距 */
+    margin-top: 80px;
+}
+
+/* 商品项样式 */
+.product-item {
+    width: 200px;
+    height: 300px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px; /* 商品之间的间距 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease-in-out;  /* 添加过渡效果，持续时间为0.3秒 */
+}
+.product-item:hover {
+    transform: scale(1.05);  /* 鼠标悬停时放大1.05倍 */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);  /* 增加阴影 */
+}
+
+.product-item img {
+    width: 100%;
+    height: 70%; /* 图片占商品区域的70% */
+    object-fit: cover;
+    border-radius: 8px;
+
+}
+.price {
+    font-size: 20px;  /* 设置整体字体大小 */
+    color: black;     /* 设置整体字体颜色 */
+    font-weight: bold; /* 使数字加粗 */
+}
+
+.currency {
+    color: red;       /* 设置￥符号颜色为红色 */
+    font-size: 21px;   /* 设置￥符号字体稍微大一些 */
+}
+.name {
+    font-size: 20px;
+    font-weight: bold;  /* 使文本加粗 */
+    margin-top: -1px;
+}
+
+.description{
+    font-size: 16px;
+    font-weight: bold;  /* 使文本加粗 */
+    margin-top: -10px;
+}
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -20px; /* 让整个footer内容往上移动 */
+}
+.product-footer .price {
+    padding-right: 90px;  /* 为购物车图标添加左边距 */
+}
+
+/* 每行放5个商品，并确保每个商品有足够的间距 */
+.product-container .product-item:nth-child(5n+1) {
+    margin-left: 100px; /* 第一列商品离左边100px */
+}
+.cart-icon {
+    background-color: red; /* 设置背景为红色 */
+    border: none; /* 去掉默认边框 */
+    border-radius: 50%; /* 圆形按钮 */
+    padding: 10px; /* 添加内边距，使图标不那么拥挤 */
+    display: inline-flex; /* 保持图标的对齐 */
+    align-items: center; /* 垂直居中图标 */
+    justify-content: center; /* 水平居中图标 */
+    cursor: pointer; /* 鼠标悬停时显示为指针 */
+    transition: transform 0.3s ease; /* 添加动画效果 */
+}
+
+.cart-icon i {
+    font-size: 25px; /* 设置图标大小 */
+    color: white; /* 图标颜色为白色 */
+}
+
+/* 鼠标悬停时放大图标 */
+.cart-icon:hover {
+    transform: scale(1.2); /* 放大 1.2 倍 */
+}
+
+
+
+/* 响应式设计（可选） */
+@media (max-width: 1200px) {
+    .product-container {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 900px) {
+    .product-container {
+        justify-content: space-around;
+    }
+}/* 弹窗的基本样式 */
+.modal {
+    display: none; /* 默认隐藏弹窗 */
+    position: fixed;
+    z-index: 1; /* 确保弹窗位于页面上层 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* 半透明背景 */
+}
+
+/* 弹窗内容的样式 */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* 弹窗宽度，可以根据需要调整 */
+    max-width: 400px; /* 最大宽度 */
+    border-radius: 10px; /* 圆角 */
+    text-align: center;
+}
+
+/* 关闭按钮样式 */
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* styles.css */
+
+/* 弹窗背景 */
+dialog {
+    width: 300px;  /* 弹窗宽度 */
+    padding: 20px; /* 弹窗内边距 */
+    border-radius: 8px; /* 弹窗圆角 */
+    background-color: #fff; /* 背景色 */
+    box-shadow: 0 4px 10px rgba(191, 232, 7, 0.97); /* 阴影效果 */
+    font-family: Arial, sans-serif; /* 字体 */
+    text-align: center; /* 文本居中 */
+    position: fixed; /* 固定位置 */
+
+    left: 20%; /* 距离屏幕左侧 50% */
+    transform: translate(-50%, -50%); /* 使用 transform 来使弹窗完全居中 */
+    border: none; /* 去掉默认边框 */
+    display: none; /* 默认不显示 */
+    z-index: 9999; /* 确保在最上层 */
+}
+
+/* 弹窗打开时的显示效果 */
+dialog[open] {
+    display: block; /* 显示弹窗 */
+}
+
+/* 弹窗内容 */
+dialog p {
+    font-size: 16px; /* 字体大小 */
+    color: #333; /* 字体颜色 */
+    margin-bottom: 20px; /* 文字和按钮之间的间隔 */
+}
+
+/* 关闭按钮样式 */
+dialog button {
+    background-color: #4CAF50; /* 按钮背景色 */
+    color: white; /* 按钮文字颜色 */
+    border: none; /* 去掉边框 */
+    padding: 10px 20px; /* 按钮内边距 */
+    font-size: 14px; /* 字体大小 */
+    border-radius: 5px; /* 圆角 */
+    cursor: pointer; /* 鼠标样式 */
+    transition: background-color 0.3s; /* 按钮颜色渐变 */
+}
+
+/* 关闭按钮 hover 效果 */
+dialog button:hover {
+    background-color: #45a049; /* 悬停时改变按钮背景色 */
+}
+
+/* 关闭按钮: 按下时的效果 */
+dialog button:active {
+    background-color: #397d3a; /* 按钮点击时改变颜色 */
+}
