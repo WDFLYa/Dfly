@@ -1,0 +1,97 @@
+.form {
+    --input-focus: #2d8cf0;
+    --font-color: #323232;
+    --font-color-sub: #666;
+    --bg-color: beige;
+    --main-color: black;
+    padding: 20px;
+    background: lightblue;
+    display: flex;
+    flex-direction: column; /* 让子元素按列排列 */
+    align-items: flex-start; /* 内容整体靠左 */
+    gap: 10px; /* 表单元素之间的间距 */
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    width: 100%;
+    height: 750px;
+}
+.title, label, .input, .button-confirm, .login-link {
+    transform: translateX(150px); /* 将每个子元素向右移动 20px */
+}
+.title {
+    color: var(--font-color);
+    font-weight: 900;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.title span {
+    color: var(--font-color-sub);
+    font-weight: 600;
+    font-size: 17px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input {
+    width: 350px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 5px 10px;
+    outline: none;
+}
+
+.input::placeholder {
+    color: var(--font-color-sub);
+    opacity: 0.8;
+}
+
+.input:focus {
+    border: 2px solid var(--input-focus);
+}
+
+.button-confirm {
+    width: 374px;
+    height: 54px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--font-color);
+    cursor: pointer;
+    transform: translate(150px,30px)
+}
+
+.login-link {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: right; /* 文本左对齐 */
+    transform: translate(270px, 40px)
+}
+
+.login-link a {
+    color: blue;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+.error {
+    color: red; /* 设置文本颜色 */
+    margin-top: -10px;
+    font-size: 10px; /* 设置字体大小 */
+    margin-left: 150px;
+}

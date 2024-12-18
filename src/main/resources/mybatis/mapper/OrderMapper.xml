@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="nuc.edu.cn.wdf.dao.OrderDao">
+
+        <!-- 根据用户ID查询订单 -->
+    <select id="findByUserId" resultType="nuc.edu.cn.wdf.pojo.Order">
+        SELECT
+        id,
+        create_time AS createTime,  <!-- 显式映射 -->
+        order_details AS orderDetails,
+        total_amount AS totalAmount,
+        user_id
+        FROM
+        orders
+        WHERE
+        user_id = #{userId}
+    </select>
+
+    <insert id="createOrder" parameterType="nuc.edu.cn.wdf.pojo.Order">
+        INSERT INTO orders (create_time, order_details, total_amount, user_id)
+        VALUES (NOW(), #{orderDetails}, #{totalAmount}, #{userId})
+    </insert>
+
+    </mapper>
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+/* 使整个页面充满屏幕并居中内容 */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* 用来包裹内容的容器 */
+.wrapper {
+    display: flex;
+    flex-direction: column;  /* 改为纵向布局 */
+    justify-content: center;
+    align-items: center;
+}
+
+/* 设置输入框和按钮容器 */
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* 添加底部间距 */
+}
+
+/* 设置输入框的样式 */
+#user-id {
+    padding: 8px;
+    font-size: 16px;
+    width: 200px;
+    margin-right: 10px; /* 添加右边距，使按钮和输入框之间有间隔 */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* 设置删除按钮的样式 */
+#delete-btn {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #f44336; /* 红色背景 */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 设置删除按钮的悬停效果 */
+#delete-btn:hover {
+    background-color: #d32f2f; /* 悬停时变为较深的红色 */
+}
+
+/* 设置返回按钮的样式 */
+#back-btn {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #4CAF50; /* 绿色背景 */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px; /* 添加顶部间距 */
+}
+
+/* 设置返回按钮的悬停效果 */
+#back-btn:hover {
+    background-color: #388E3C; /* 悬停时变为较深的绿色 */
+}

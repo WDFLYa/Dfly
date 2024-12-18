@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="nuc.edu.cn.wdf.dao.UserDao">
+
+    <!-- 查询所有用户，显示id, userName 和 password -->
+    <select id="findAllUser"
+            resultType="nuc.edu.cn.wdf.pojo.User">
+        SELECT id, userName, password FROM t_user
+    </select>
+    <!-- 根据用户id查询money -->
+    <select id="getMoneyById" resultType="double">
+        SELECT money
+        FROM t_user
+        WHERE id = #{id}
+    </select>
+
+    <!-- 通过用户名查询用户 -->
+    <select id="findUserByUserName" resultType="nuc.edu.cn.wdf.pojo.User">
+        SELECT id, userName, password FROM t_user WHERE userName = #{userName}
+    </select>
+    <!-- 根据用户 ID 查询用户 -->
+    <select id="findUserByUserId" resultType="nuc.edu.cn.wdf.pojo.User">
+        SELECT id, userName, password FROM t_user WHERE id = #{id}
+    </select>
+    <!-- 添加用户，插入 userName 和 password，id 自动生成 -->
+    <insert id="addUser"
+            parameterType="nuc.edu.cn.wdf.pojo.User"
+            useGeneratedKeys="true"
+            keyProperty="id">
+        INSERT INTO t_user(userName, password) VALUES(#{userName}, #{password})
+    </insert>
+
+    <!-- 删除用户，按用户名删除 -->
+    <delete id="deleteUserByUserName" parameterType="String">
+        DELETE FROM t_user WHERE userName=#{userName}
+    </delete>
+    <!-- 更新用户的money -->
+    <update id="updateMoneyById">
+        UPDATE t_user
+        SET money = #{money}
+        WHERE id = #{id}
+    </update>
+
+    <update id="updateuserById">
+        UPDATE t_user
+        SET userName = #{userName},
+         password = #{password}
+        WHERE id = #{id}
+    </update>
+
+</mapper>

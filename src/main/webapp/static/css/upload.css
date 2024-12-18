@@ -1,0 +1,82 @@
+/* 通用样式 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 文件上传容器样式 */
+.upload-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    max-width: 100%;
+}
+
+/* 文件上传表单标题 */
+.upload-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* 文件上传输入框样式 */
+input[type="file"] {
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* 文件上传输入框获得焦点时的样式 */
+input[type="file"]:focus {
+    border-color: #007BFF;
+    background-color: #e9f4ff;
+}
+
+/* 提交按钮样式 */
+input[type="submit"] {
+    padding: 12px 20px;
+    background-color: #45a049;;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+/* 提交按钮悬停效果 */
+input[type="submit"]:hover {
+    background-color: #4CAF50;;
+}
+
+/* 图片预览样式 */
+.image-preview {
+    margin-top: 20px;
+    display: none;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 提示信息样式 */
+.info-text {
+    font-size: 14px;
+    color: #777;
+    margin-top: 10px;
+}

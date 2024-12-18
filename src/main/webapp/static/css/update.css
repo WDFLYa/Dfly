@@ -1,0 +1,78 @@
+/* 通用样式 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* 商品表格的样式 */
+.product-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-table th, .product-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 表头的样式 */
+.product-table th {
+    background-color: #726f6f;
+    color: white;
+    font-weight: bold;
+}
+
+/* 表格行的交替背景色 */
+.product-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* 表格行悬停效果 */
+.product-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* 图片列的样式 */
+.product-table td img {
+    width: 80px; /* 控制图片大小 */
+    height: auto;
+    border-radius: 4px;
+}
+
+/* 按钮样式 */
+button {
+    padding: 10px 20px;
+    background-color: #9d9797;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 按钮悬停效果 */
+button:hover {
+    background-color: #45a049;
+}
+
+/* 按钮容器样式 */
+button#back-btn {
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 在页面中居中显示 */
+div {
+    text-align: center;
+}

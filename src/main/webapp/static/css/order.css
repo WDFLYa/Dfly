@@ -1,0 +1,151 @@
+/* 导航栏的基础样式 */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* 按钮均匀分布 */
+    background-color: #7b9ec2;
+    padding: 10px 20px;
+    border-radius: 12px; /* 圆角 */
+}
+
+.nav-item {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+/* 鼠标悬停时的背景色变化 */
+.nav-item:hover {
+    background-color: #5a3d9e;
+    transform: scale(1.1); /* 放大效果 */
+}
+/* 页面基础设置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    background-color: #405265;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.order-list {
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+.order-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 25px;
+    transition: box-shadow 0.3s ease;
+}
+
+.order-item:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.order-date {
+    font-weight: 600;
+    color: #777;
+}
+
+.order-total {
+    color: #007bff;
+    font-size: 1.3em;
+}
+
+.order-details ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.order-details li {
+    padding: 8px 0;
+    font-size: 1.1em;
+    border-bottom: 1px solid #eee;
+}
+
+.order-details li:last-child {
+    border-bottom: none;
+}
+
+.order-item:last-child {
+    margin-bottom: 0;
+}
+
+/* 小按钮样式 */
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* 响应式布局优化 */
+@media (max-width: 768px) {
+    .order-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .order-list {
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .order-item {
+        padding: 20px;
+    }
+}
+.order-date,
+.order-details {
+    margin-right: 15px; /* 增加时间和详情之间的间距 */
+}
